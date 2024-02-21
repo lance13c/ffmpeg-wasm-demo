@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
+import Image from "next/image";
+import Icon from "../public/icon-128.png";
 import "./globals.css";
 
 const poppins = Poppins({ subsets: ["latin"], weight: ["400", "600"] });
@@ -15,8 +17,29 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={poppins.className}>
-      <body>{children}</body>
+    <html lang="en" className={`${poppins.className} bg-orange-50`}>
+      <nav
+        style={{
+          backdropFilter: "blur(20px)",
+        }}
+        className="navbar fixed h-20 top-0 px-[8vw] bg-white/80 shadow w-full"
+      >
+        <ul className="gap-10 max-w-5xl w-full">
+          <li className="btm-nav-sm h-full navbar-start">
+            <a
+              className="flex flex-nowrap gap-2
+             items-center"
+              href="/"
+            >
+              <Image src={Icon} height="30" alt="Github Video Compressor Icon" />
+              <span className="hidden sm:inline">Github Video Compressor</span>
+              <span className="inline sm:hidden">GVC</span>
+            </a>
+          </li>
+          <li className="navbar-end text-right">{/* <a href="/about">About</a> */}</li>
+        </ul>
+      </nav>
+      <body className="relative top-20">{children}</body>
     </html>
   );
 }

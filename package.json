@@ -15,7 +15,8 @@
     "next": "14.1.0",
     "react": "^18",
     "react-dom": "^18",
-    "react-icons": "^5.0.1"
+    "react-icons": "^5.0.1",
+    "react-vis": "^1.12.1"
   },
   "devDependencies": {
     "@types/node": "^20",
@@ -27,6 +28,7 @@
     "eslint-config-next": "14.1.0",
     "postcss": "^8",
     "tailwindcss": "^3.3.0",
-    "typescript": "next"
+    "typescript": "next",
+    "sharp": "^0.33.2"
   }
 }
